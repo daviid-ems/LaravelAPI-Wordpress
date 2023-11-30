@@ -1,0 +1,93 @@
+# Translation of Themes - Impressive Blog in Spanish (Spain)
+# This file is distributed under the same license as the Themes - Impressive Blog package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-11-05 09:18:39+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.11\n"
+"Language: es\n"
+"Project-Id-Version: Themes - Impressive Blog\n"
+
+#. Description of the theme
+#, gp-priority: high
+msgid "Impressive Blog ( child of City Blog ) is a highly versatile and visually stunning theme designed for bloggers and columnists. Its minimal and mobile-friendly layout makes it perfect for personal, lifestyle, health and fitness, cooking, beauty and fashion, travel, and various other blog genres. With multiple Google font options, a wide selection of colors, and various layout choices, you can create a magazine, newspaper, or blog that perfectly suits your style and content. The theme also offers RTL support, show/hide settings, and different front page sections, giving you complete control over your site's appearance and functionality. Elevate your online presence and provide an exceptional browsing experience for your readers with Impressive Blog. Demo link: Check the demo at: https://demos.ascendoor.com/impressive-blog/"
+msgstr "Impressive Blog ( tema hijo de City Blog ) es un tema muy versátil y visualmente impactante diseñado para blogueros y columnistas. Su diseño minimalista y apto para móviles lo hace perfecto para blogs personales, de estilo de vida, salud y fitness, cocina, belleza y moda, viajes y otros géneros de blog. Con múltiples opciones de fuentes de Google, una amplia selección de colores y varias opciones de diseño, puedes crear una revista, periódico o blog que se adapte perfectamente a tu estilo y contenido. El tema también ofrece compatibilidad con RTL, ajustes de mostrar/ocultar y diferentes secciones de portada, lo que te da un control total sobre el aspecto y la funcionalidad de tu sitio. Eleva tu presencia online y proporciona una experiencia de navegación excepcional a tus lectores con Impressive Blog. Enlace de demostración: Comprueba la demo en: https://demos.ascendoor.com/impressive-blog/"
+
+#. Theme Name of the theme
+#, gp-priority: high
+msgid "Impressive Blog"
+msgstr "Impressive Blog"
+
+#: inc/ocdi.php:8
+msgid "Click here to download demo files."
+msgstr "Haz clic aquí para descargar archivos de demostración."
+
+#: inc/ocdi.php:6
+msgid "Demo content files for Impressive Blog Theme."
+msgstr "Archivos de contenido de demostración para el tema Impressive Blog."
+
+#: inc/customizer/post-carousel.php:126
+msgid "Select Category"
+msgstr "Seleccionar categoría"
+
+#: inc/customizer/post-carousel.php:104
+msgid "Select Post %d"
+msgstr "Seleccionar entrada %d"
+
+#: inc/customizer/post-carousel.php:87
+msgid "Category"
+msgstr "Categoría"
+
+#: inc/customizer/post-carousel.php:86
+msgid "Post"
+msgstr "Entrada"
+
+#: inc/customizer/post-carousel.php:80
+msgid "Select Content Type"
+msgstr "Seleccionar el tipo de contenido"
+
+#: inc/customizer/post-carousel.php:60
+msgid "Section Title"
+msgstr "Título de la sección"
+
+#: inc/customizer/post-carousel.php:52 inc/sections/post-carousel.php:42
+msgid "Post Carousel"
+msgstr "Carrusel de entradas"
+
+#: inc/customizer/post-carousel.php:31
+msgid "Enable Post Carousel Section"
+msgstr "Activar la sección del carrusel de entradas"
+
+#: inc/customizer/post-carousel.php:12
+msgid "Post Carousel Section"
+msgstr "Sección de carrusel de entradas"
+
+#: inc/customizer.php:19
+msgid "Buy Pro"
+msgstr "Comprar la versión Pro"
+
+#: inc/customizer.php:18
+msgid "Impressive Blog Pro"
+msgstr "Impressive Blog Pro"
+
+#: header.php:26
+msgid "Skip to content"
+msgstr "Saltar al contenido"
+
+#. Author URI of the theme
+#, gp-priority: low
+msgid "https://ascendoor.com/"
+msgstr "https://ascendoor.com/"
+
+#. Author of the theme
+#, gp-priority: low
+msgid "Ascendoor"
+msgstr "Ascendoor"
+
+#. Theme URI of the theme
+#, gp-priority: low
+msgid "https://ascendoor.com/themes/impressive-blog/"
+msgstr "https://ascendoor.com/themes/impressive-blog/"
