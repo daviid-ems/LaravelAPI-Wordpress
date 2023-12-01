@@ -15,25 +15,20 @@ RUN apk --no-cache add \
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Copia el archivo composer.json y composer.lock al directorio de trabajo
-COPY ./api/composer.json .
-COPY ./api/composer.lock .
+#COPY ./api/composer.json .
+#COPY ./api/composer.lock .
 
 # Instala las dependencias de Composer
-RUN composer install --no-scripts --no-autoloader
+#RUN composer install --no-scripts --no-autoloader
 
 # Copia los archivos de la aplicación al directorio de trabajo
-COPY ./api .
+#COPY ./api .
 
 # Crea el archivo .env
 COPY ./api/.env.example .env
 
 # Genera la clave de la aplicación de Laravel
-RUN php artisan key:generate
-
-# Ejecuta el comando de Artisan para cargar la configuración y optimizar la aplicación
-RUN php artisan config:cache
-RUN php artisan route:cache
-RUN php artisan optimize
+#RUN php artisan key:generate
 
 # Expone el puerto 8000
 EXPOSE 8000
