@@ -2374,6 +2374,20 @@ nav.woocommerce-pagination > .page-numbers > li:last-child {
 .yuki-article-header-background .yuki-article-header .entry-metas {
   --yuki-meta-link-initial-color: var(--yuki-article-header-override, #fff);
 }
+.yuki-article-header-background .article-featured-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  padding: 0;
+}
+.yuki-article-header-background .article-featured-image img {
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+}
 
 .has-drop-cap::first-letter {
   float: left;
@@ -3456,6 +3470,15 @@ nav.woocommerce-pagination > .page-numbers > li:last-child {
   fill: var(--yuki-to-top-icon-hover);
 }
 
+.yuki-particles-canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--yuki-particles-canvas-z-index, 1);
+}
+
 .yuki-hero .hero-container {
   min-height: inherit;
   align-items: center;
@@ -4208,6 +4231,9 @@ body:not(.elementor-page) .gallery-item {
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.resize {
+  resize: both;
+}
 .flex-row-reverse {
   flex-direction: row-reverse;
 }
@@ -4347,6 +4373,10 @@ body:not(.elementor-page) .gallery-item {
 }
 .outline {
   outline-style: solid;
+}
+.blur {
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);

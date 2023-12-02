@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Yuki 1.3.12\n"
+"Project-Id-Version: Yuki 1.3.13\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/yuki\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-11-30T09:23:09+00:00\n"
+"POT-Creation-Date: 2023-12-01T13:14:48+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: yuki\n"
@@ -262,17 +262,18 @@ msgid "Vertical Spacing"
 msgstr ""
 
 #: inc/builder/class-footer-row.php:125
-#: inc/builder/class-header-row.php:116
+#: inc/builder/class-header-row.php:113
+#: inc/traits/trait-particles-effect.php:132
 msgid "Z Index"
 msgstr ""
 
 #: inc/builder/class-footer-row.php:133
-#: inc/builder/class-header-row.php:124
+#: inc/builder/class-header-row.php:121
 msgid "Visibility"
 msgstr ""
 
 #: inc/builder/class-footer-row.php:163
-#: inc/builder/class-header-row.php:154
+#: inc/builder/class-header-row.php:238
 #: inc/builder/class-modal-row.php:112
 #: inc/customizer/class-archive-section.php:183
 #: inc/customizer/class-archive-section.php:438
@@ -310,7 +311,7 @@ msgid "Style"
 msgstr ""
 
 #: inc/builder/class-footer-row.php:165
-#: inc/builder/class-header-row.php:197
+#: inc/builder/class-header-row.php:195
 #: inc/customizer/class-archive-section.php:332
 #: inc/customizer/class-content-section.php:376
 #: inc/customizer/class-content-section.php:479
@@ -331,21 +332,21 @@ msgid "Background"
 msgstr ""
 
 #: inc/builder/class-footer-row.php:175
-#: inc/builder/class-header-row.php:156
+#: inc/builder/class-header-row.php:154
 #: inc/customizer/class-content-section.php:406
 #: inc/extensions/class-sticky-extension.php:66
 msgid "Top Border"
 msgstr ""
 
 #: inc/builder/class-footer-row.php:185
-#: inc/builder/class-header-row.php:166
+#: inc/builder/class-header-row.php:164
 #: inc/customizer/class-content-section.php:414
 #: inc/extensions/class-sticky-extension.php:73
 msgid "Bottom Border"
 msgstr ""
 
 #: inc/builder/class-footer-row.php:198
-#: inc/builder/class-header-row.php:233
+#: inc/builder/class-header-row.php:241
 #: inc/homepage/class-homepage-column.php:226
 #: inc/homepage/class-homepage-row.php:234
 msgid "Advanced"
@@ -449,7 +450,32 @@ msgstr ""
 msgid "Primary Navbar"
 msgstr ""
 
-#: inc/builder/class-header-row.php:105
+#: inc/builder/class-header-row.php:104
+#: inc/homepage/elements/class-hero-element.php:191
+#: inc/traits/trait-button-controls.php:89
+msgid "Min Height"
+msgstr ""
+
+#: inc/builder/class-header-row.php:178
+#: inc/extensions/class-sticky-extension.php:80
+msgid "Box Shadow"
+msgstr ""
+
+#: inc/builder/class-header-row.php:204
+#: inc/customizer/class-archive-section.php:341
+msgid "Enable Overlay"
+msgstr ""
+
+#: inc/builder/class-header-row.php:213
+#: inc/customizer/class-global-section.php:297
+msgid "Opacity"
+msgstr ""
+
+#: inc/builder/class-header-row.php:222
+msgid "Overlay Background"
+msgstr ""
+
+#: inc/builder/class-header-row.php:235
 #: inc/builder/class-modal-row.php:111
 #: inc/customizer/class-archive-section.php:182
 #: inc/customizer/class-archive-section.php:417
@@ -474,31 +500,6 @@ msgstr ""
 #: inc/traits/trait-socials-controls.php:81
 #: inc/traits/trait-widgets-controls.php:100
 msgid "Content"
-msgstr ""
-
-#: inc/builder/class-header-row.php:107
-#: inc/homepage/elements/class-hero-element.php:191
-#: inc/traits/trait-button-controls.php:89
-msgid "Min Height"
-msgstr ""
-
-#: inc/builder/class-header-row.php:180
-#: inc/extensions/class-sticky-extension.php:80
-msgid "Box Shadow"
-msgstr ""
-
-#: inc/builder/class-header-row.php:206
-#: inc/customizer/class-archive-section.php:341
-msgid "Enable Overlay"
-msgstr ""
-
-#: inc/builder/class-header-row.php:215
-#: inc/customizer/class-global-section.php:297
-msgid "Opacity"
-msgstr ""
-
-#: inc/builder/class-header-row.php:224
-msgid "Overlay Background"
 msgstr ""
 
 #: inc/builder/class-modal-row.php:119
@@ -884,7 +885,7 @@ msgid "Overlay Opacity"
 msgstr ""
 
 #: inc/customizer/class-archive-section.php:360
-#: inc/traits/trait-article-controls.php:246
+#: inc/traits/trait-article-controls.php:215
 msgid "Header Overlay"
 msgstr ""
 
@@ -1163,7 +1164,11 @@ msgstr ""
 #: inc/customizer/class-colors-section.php:224
 #: inc/extensions/class-related-posts-extension.php:63
 #: inc/extensions__premium_only/class-custom-fonts-extension.php:57
-#: inc/traits/trait-article-controls.php:274
+#: inc/extensions__premium_only/class-particles-premium-extension.php:95
+#: inc/extensions__premium_only/class-particles-premium-extension.php:108
+#: inc/traits/trait-article-controls.php:243
+#: inc/traits/trait-particles-effect.php:161
+#: inc/traits/trait-particles-effect.php:196
 #: inc/traits/trait-post-structure.php:155
 #: inc/traits/trait-post-structure.php:627
 msgid "Default"
@@ -1505,7 +1510,7 @@ msgstr ""
 #: inc/customizer/class-global-section.php:457
 #: inc/homepage/class-homepage-column.php:177
 #: inc/homepage/class-homepage-row.php:185
-#: inc/traits/trait-article-controls.php:289
+#: inc/traits/trait-article-controls.php:258
 #: inc/traits/trait-button-controls.php:132
 #: inc/traits/trait-card-element-controls.php:100
 #: inc/traits/trait-post-structure.php:370
@@ -1775,8 +1780,8 @@ msgstr ""
 #: inc/homepage/elements/class-heading-element.php:123
 #: inc/homepage/elements/class-text-element.php:128
 #: inc/traits/trait-article-controls.php:185
-#: inc/traits/trait-article-controls.php:256
-#: inc/traits/trait-article-controls.php:313
+#: inc/traits/trait-article-controls.php:225
+#: inc/traits/trait-article-controls.php:282
 msgid "Spacing"
 msgstr ""
 
@@ -2131,7 +2136,7 @@ msgid "Upload Image"
 msgstr ""
 
 #: inc/elements__premium_only/class-image-element.php:37
-#: inc/traits/trait-article-controls.php:270
+#: inc/traits/trait-article-controls.php:239
 msgid "Image Width"
 msgstr ""
 
@@ -2141,6 +2146,10 @@ msgstr ""
 
 #: inc/elements__premium_only/class-image-element.php:54
 msgid "Link"
+msgstr ""
+
+#: inc/extensions/class-particles-extension.php:147
+msgid "Background Particles Effect"
 msgstr ""
 
 #: inc/extensions/class-related-posts-extension.php:49
@@ -2370,6 +2379,81 @@ msgstr ""
 msgid "900 Italic"
 msgstr ""
 
+#: inc/extensions__premium_only/class-particles-premium-extension.php:77
+msgid "%sClick here%s to generate JSON for the below field."
+msgstr ""
+
+#: inc/extensions__premium_only/class-particles-premium-extension.php:82
+msgid "Input Custom JSON"
+msgstr ""
+
+#: inc/extensions__premium_only/class-particles-premium-extension.php:92
+msgid "Particle Shape"
+msgstr ""
+
+#: inc/extensions__premium_only/class-particles-premium-extension.php:96
+msgid "Circle"
+msgstr ""
+
+#: inc/extensions__premium_only/class-particles-premium-extension.php:97
+msgid "Edge"
+msgstr ""
+
+#: inc/extensions__premium_only/class-particles-premium-extension.php:98
+msgid "Triangle"
+msgstr ""
+
+#: inc/extensions__premium_only/class-particles-premium-extension.php:99
+msgid "Polygon"
+msgstr ""
+
+#: inc/extensions__premium_only/class-particles-premium-extension.php:100
+msgid "Star"
+msgstr ""
+
+#: inc/extensions__premium_only/class-particles-premium-extension.php:104
+#: inc/traits/trait-particles-effect.php:192
+msgid "Interactivity Detect On"
+msgstr ""
+
+#: inc/extensions__premium_only/class-particles-premium-extension.php:109
+#: inc/traits/trait-particles-effect.php:197
+msgid "Window"
+msgstr ""
+
+#: inc/extensions__premium_only/class-particles-premium-extension.php:110
+#: inc/traits/trait-particles-effect.php:198
+msgid "Canvas"
+msgstr ""
+
+#: inc/extensions__premium_only/class-particles-premium-extension.php:114
+#: inc/extensions__premium_only/class-particles-premium-extension.php:115
+#: inc/traits/trait-particles-effect.php:202
+#: inc/traits/trait-particles-effect.php:203
+msgid "Particle Color"
+msgstr ""
+
+#: inc/extensions__premium_only/class-particles-premium-extension.php:116
+#: inc/traits/trait-particles-effect.php:204
+msgid "Line Color"
+msgstr ""
+
+#: inc/extensions__premium_only/class-particles-premium-extension.php:119
+msgid "Particle Opacity"
+msgstr ""
+
+#: inc/extensions__premium_only/class-particles-premium-extension.php:128
+msgid "Particle Quantity"
+msgstr ""
+
+#: inc/extensions__premium_only/class-particles-premium-extension.php:135
+msgid "Particle Speed"
+msgstr ""
+
+#: inc/extensions__premium_only/class-particles-premium-extension.php:142
+msgid "Particle Size"
+msgstr ""
+
 #: inc/homepage/class-homepage-builder.php:37
 msgid "Heading"
 msgstr ""
@@ -2454,7 +2538,7 @@ msgstr ""
 #: inc/homepage/class-homepage-row.php:199
 #: inc/homepage/elements/class-posts-slider-element.php:372
 #: inc/homepage/elements/class-posts-slider-element.php:480
-#: inc/traits/trait-article-controls.php:301
+#: inc/traits/trait-article-controls.php:270
 #: inc/traits/trait-button-controls.php:155
 #: inc/traits/trait-post-card.php:241
 #: inc/traits/trait-post-structure.php:376
@@ -2687,7 +2771,7 @@ msgstr ""
 
 #: inc/homepage/elements/class-magazine-element.php:152
 #: inc/homepage/elements/class-posts-slider-element.php:200
-#: inc/traits/trait-article-controls.php:214
+#: inc/traits/trait-article-controls.php:303
 #: inc/traits/trait-post-structure.php:338
 msgid "Image Size"
 msgstr ""
@@ -3013,105 +3097,105 @@ msgid "Yuki Theme"
 msgstr ""
 
 #: inc/template-tags.php:550
-#: inc/template-tags.php:903
+#: inc/template-tags.php:907
 msgid "Edit"
 msgstr ""
 
-#: inc/template-tags.php:897
+#: inc/template-tags.php:901
 msgid "Pages:"
-msgstr ""
-
-#: inc/template-tags.php:918
-msgctxt "Shapes"
-msgid "None"
 msgstr ""
 
 #: inc/template-tags.php:922
 msgctxt "Shapes"
-msgid "Tilt"
+msgid "None"
 msgstr ""
 
 #: inc/template-tags.php:926
 msgctxt "Shapes"
+msgid "Tilt"
+msgstr ""
+
+#: inc/template-tags.php:930
+msgctxt "Shapes"
 msgid "Mountains (Pro)"
 msgstr ""
 
-#: inc/template-tags.php:931
+#: inc/template-tags.php:935
 msgctxt "Shapes"
 msgid "Drops  (Pro)"
 msgstr ""
 
-#: inc/template-tags.php:936
+#: inc/template-tags.php:940
 msgctxt "Shapes"
 msgid "Clouds (Pro)"
 msgstr ""
 
-#: inc/template-tags.php:941
+#: inc/template-tags.php:945
 msgctxt "Shapes"
 msgid "Zigzag (Pro)"
 msgstr ""
 
-#: inc/template-tags.php:946
+#: inc/template-tags.php:950
 msgctxt "Shapes"
 msgid "Pyramids (Pro)"
 msgstr ""
 
-#: inc/template-tags.php:951
+#: inc/template-tags.php:955
 msgctxt "Shapes"
 msgid "Triangle (Pro)"
 msgstr ""
 
-#: inc/template-tags.php:956
+#: inc/template-tags.php:960
 msgctxt "Shapes"
 msgid "Triangle Asymmetrical (Pro)"
 msgstr ""
 
-#: inc/template-tags.php:961
+#: inc/template-tags.php:965
 msgctxt "Shapes"
 msgid "Tilt Opacity (Pro)"
 msgstr ""
 
-#: inc/template-tags.php:966
+#: inc/template-tags.php:970
 msgctxt "Shapes"
 msgid "Fan Opacity (Pro)"
 msgstr ""
 
-#: inc/template-tags.php:971
+#: inc/template-tags.php:975
 msgctxt "Shapes"
 msgid "Curve (Pro)"
 msgstr ""
 
-#: inc/template-tags.php:976
+#: inc/template-tags.php:980
 msgctxt "Shapes"
 msgid "Curve Asymmetrical (Pro)"
 msgstr ""
 
-#: inc/template-tags.php:981
+#: inc/template-tags.php:985
 msgctxt "Shapes"
 msgid "Waves (Pro)"
 msgstr ""
 
-#: inc/template-tags.php:986
+#: inc/template-tags.php:990
 msgctxt "Shapes"
 msgid "Waves Brush (Pro)"
 msgstr ""
 
-#: inc/template-tags.php:991
+#: inc/template-tags.php:995
 msgctxt "Shapes"
 msgid "Waves Pattern (Pro)"
 msgstr ""
 
-#: inc/template-tags.php:996
+#: inc/template-tags.php:1000
 msgctxt "Shapes"
 msgid "Arrow (Pro)"
 msgstr ""
 
-#: inc/template-tags.php:1001
+#: inc/template-tags.php:1005
 msgctxt "Shapes"
 msgid "Split (Pro)"
 msgstr ""
 
-#: inc/template-tags.php:1006
+#: inc/template-tags.php:1010
 msgctxt "Shapes"
 msgid "Book (Pro)"
 msgstr ""
@@ -3201,36 +3285,36 @@ msgid "Tags"
 msgstr ""
 
 #: inc/traits/trait-article-controls.php:209
+msgid "Header Color Override"
+msgstr ""
+
+#: inc/traits/trait-article-controls.php:211
+msgid "Override"
+msgstr ""
+
+#: inc/traits/trait-article-controls.php:244
+msgid "Wide"
+msgstr ""
+
+#: inc/traits/trait-article-controls.php:245
+msgid "Full"
+msgstr ""
+
+#: inc/traits/trait-article-controls.php:249
+msgid "Image Height"
+msgstr ""
+
+#: inc/traits/trait-article-controls.php:298
 msgid "Image Fallback"
 msgstr ""
 
-#: inc/traits/trait-article-controls.php:210
+#: inc/traits/trait-article-controls.php:299
 #: inc/traits/trait-post-structure.php:355
 msgid "If the current post does not have a featured image, then this image will be displayed."
 msgstr ""
 
-#: inc/traits/trait-article-controls.php:220
+#: inc/traits/trait-article-controls.php:309
 msgid "Image Style"
-msgstr ""
-
-#: inc/traits/trait-article-controls.php:240
-msgid "Header Color Override"
-msgstr ""
-
-#: inc/traits/trait-article-controls.php:242
-msgid "Override"
-msgstr ""
-
-#: inc/traits/trait-article-controls.php:275
-msgid "Wide"
-msgstr ""
-
-#: inc/traits/trait-article-controls.php:276
-msgid "Full"
-msgstr ""
-
-#: inc/traits/trait-article-controls.php:280
-msgid "Image Height"
 msgstr ""
 
 #: inc/traits/trait-button-controls.php:138
@@ -3286,6 +3370,67 @@ msgstr ""
 
 #: inc/traits/trait-icon-button-controls.php:170
 msgid "Fully customize your icon button in our %sPro Version%s"
+msgstr ""
+
+#: inc/traits/trait-particles-effect.php:123
+msgid "Enable Particles Effect"
+msgstr ""
+
+#: inc/traits/trait-particles-effect.php:140
+msgid "Particle Source"
+msgstr ""
+
+#: inc/traits/trait-particles-effect.php:144
+msgid "Preset"
+msgstr ""
+
+#: inc/traits/trait-particles-effect.php:145
+#: inc/traits/trait-socials-controls.php:138
+msgid "Custom"
+msgstr ""
+
+#: inc/traits/trait-particles-effect.php:158
+msgid "Choose Particle Preset"
+msgstr ""
+
+#: inc/traits/trait-particles-effect.php:162
+msgid "Gather"
+msgstr ""
+
+#: inc/traits/trait-particles-effect.php:163
+msgid "Parallax"
+msgstr ""
+
+#: inc/traits/trait-particles-effect.php:164
+msgid "NASA"
+msgstr ""
+
+#: inc/traits/trait-particles-effect.php:165
+msgid "Polygon Bubble"
+msgstr ""
+
+#: inc/traits/trait-particles-effect.php:166
+msgid "Circle Bubble"
+msgstr ""
+
+#: inc/traits/trait-particles-effect.php:167
+msgid "Snow"
+msgstr ""
+
+#: inc/traits/trait-particles-effect.php:168
+msgid "Fire Spark"
+msgstr ""
+
+#: inc/traits/trait-particles-effect.php:169
+msgid "Nyan Cat"
+msgstr ""
+
+#: inc/traits/trait-particles-effect.php:182
+msgid "You can customize your particles effect using the online editor in %sPro Version%s"
+msgstr ""
+
+#: inc/traits/trait-particles-effect.php:207
+msgid "More particle options available in %sPro Version%s"
 msgstr ""
 
 #: inc/traits/trait-password-protected.php:103
@@ -3489,10 +3634,6 @@ msgstr ""
 #: inc/traits/trait-socials-controls.php:133
 #: inc/traits/trait-socials-controls.php:199
 msgid "Icons Color"
-msgstr ""
-
-#: inc/traits/trait-socials-controls.php:138
-msgid "Custom"
 msgstr ""
 
 #: inc/traits/trait-socials-controls.php:181

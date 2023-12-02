@@ -22,6 +22,7 @@
         var _modules_popup__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(17);
         var _modules_sticky__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(18);
         var _modules_hashchange__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(19);
+        var _modules_particles__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(20);
         jQuery(document).ready((function($) {
             "use strict";
             new _modules_create_scroll_reveal__WEBPACK_IMPORTED_MODULE_2__["default"]($);
@@ -40,6 +41,7 @@
             new _modules_popup__WEBPACK_IMPORTED_MODULE_15__["default"]($);
             new _modules_sticky__WEBPACK_IMPORTED_MODULE_16__["default"]($);
             new _modules_hashchange__WEBPACK_IMPORTED_MODULE_17__["default"]($);
+            new _modules_particles__WEBPACK_IMPORTED_MODULE_18__["default"]($);
         }));
     }, function() {
         (function() {
@@ -1236,6 +1238,113 @@
     }, (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
         "use strict";
         __webpack_require__.r(__webpack_exports__);
+        __webpack_require__.d(__webpack_exports__, {
+            default: () => __WEBPACK_DEFAULT_EXPORT__
+        });
+        function _classCallCheck(instance, Constructor) {
+            if (!(instance instanceof Constructor)) {
+                throw new TypeError("Cannot call a class as a function");
+            }
+        }
+        function _defineProperties(target, props) {
+            for (var i = 0; i < props.length; i++) {
+                var descriptor = props[i];
+                descriptor.enumerable = descriptor.enumerable || false;
+                descriptor.configurable = true;
+                if ("value" in descriptor) descriptor.writable = true;
+                Object.defineProperty(target, descriptor.key, descriptor);
+            }
+        }
+        function _createClass(Constructor, protoProps, staticProps) {
+            if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+            if (staticProps) _defineProperties(Constructor, staticProps);
+            Object.defineProperty(Constructor, "prototype", {
+                writable: false
+            });
+            return Constructor;
+        }
+        var Particles = function() {
+            function Particles($) {
+                var _this = this;
+                _classCallCheck(this, Particles);
+                if (!window.particlesJS) {
+                    return;
+                }
+                $(".yuki-particles-canvas").each((function(i, el) {
+                    var $canvas = $(el);
+                    var config = JSON.parse($canvas.attr("data-yuki-particles"));
+                    particlesJS($canvas.attr("id"), _this.overrideConfig($canvas, config));
+                }));
+            }
+            _createClass(Particles, [ {
+                key: "overrideConfig",
+                value: function overrideConfig($canvas, config) {
+                    var detect_on = $canvas.data("yuki-particle-detect-on");
+                    var quantity = Number($canvas.data("yuki-particle-quantity"));
+                    var speed = Number($canvas.data("yuki-particle-speed"));
+                    var size = Number($canvas.data("yuki-particle-size"));
+                    var shape = $canvas.data("yuki-particle-shape");
+                    var particle_color = this.getColorValue($canvas.data("yuki-particle-color"));
+                    var line_color = this.getColorValue($canvas.data("yuki-particle-line-color") || particle_color);
+                    if ("default" !== detect_on && "" !== detect_on && undefined !== detect_on) {
+                        config.interactivity.detect_on = detect_on;
+                    }
+                    if ("" !== size && undefined !== size && size > 0) {
+                        config.particles.size.value = size;
+                    }
+                    if ("" !== quantity && undefined !== quantity && quantity > 0) {
+                        config.particles.number.value = quantity;
+                    }
+                    if ("" !== particle_color && undefined !== particle_color) {
+                        config.particles.color.value = particle_color;
+                    }
+                    if ("" !== line_color && undefined !== line_color) {
+                        if (config.particles.line_linked) {
+                            config.particles.line_linked.color = line_color;
+                        } else {
+                            if (config.particles.links) {
+                                config.particles.links.color = line_color;
+                            } else {
+                                config.particles.links = {
+                                    color: line_color
+                                };
+                            }
+                        }
+                    }
+                    if ("default" !== shape && "" !== shape && undefined !== shape) {
+                        config.particles.shape.type = shape;
+                    }
+                    if ("" !== speed && undefined !== speed && speed > 0) {
+                        config.particles.move.speed = speed;
+                    }
+                    config.background = {};
+                    config.fullScreen = {
+                        enable: false
+                    };
+                    return config;
+                }
+            }, {
+                key: "getColorValue",
+                value: function getColorValue(color) {
+                    if (!color || color === "" || color === "__INITIAL_VALUE__") {
+                        return "";
+                    }
+                    if (color.indexOf("var") > -1) {
+                        var value = getComputedStyle(document.documentElement).getPropertyValue(color.replace(/var\(/, "").replace(/\)/, "")).trim().replace(/\s/g, "");
+                        if (value.indexOf("#") === -1 && value.indexOf("rgb") === -1) {
+                            return "rgb(".concat(value, ")");
+                        }
+                        return value;
+                    }
+                    return color;
+                }
+            } ]);
+            return Particles;
+        }();
+        const __WEBPACK_DEFAULT_EXPORT__ = Particles;
+    }, (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+        "use strict";
+        __webpack_require__.r(__webpack_exports__);
     }, (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
         "use strict";
         __webpack_require__.r(__webpack_exports__);
@@ -1364,10 +1473,10 @@
         chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
     })();
     __webpack_require__.O(undefined, [ 5, 6, 7, 9, 8 ], (() => __webpack_require__(0)));
-    __webpack_require__.O(undefined, [ 5, 6, 7, 9, 8 ], (() => __webpack_require__(20)));
     __webpack_require__.O(undefined, [ 5, 6, 7, 9, 8 ], (() => __webpack_require__(21)));
     __webpack_require__.O(undefined, [ 5, 6, 7, 9, 8 ], (() => __webpack_require__(22)));
     __webpack_require__.O(undefined, [ 5, 6, 7, 9, 8 ], (() => __webpack_require__(23)));
-    var __webpack_exports__ = __webpack_require__.O(undefined, [ 5, 6, 7, 9, 8 ], (() => __webpack_require__(24)));
+    __webpack_require__.O(undefined, [ 5, 6, 7, 9, 8 ], (() => __webpack_require__(24)));
+    var __webpack_exports__ = __webpack_require__.O(undefined, [ 5, 6, 7, 9, 8 ], (() => __webpack_require__(25)));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

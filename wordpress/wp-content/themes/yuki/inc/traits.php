@@ -17,3 +17,4 @@ require get_template_directory() . '/inc/traits/trait-article-controls.php';
 require get_template_directory() . '/inc/traits/trait-card-element-controls.php';
 require get_template_directory() . '/inc/traits/trait-password-protected.php';
 require get_template_directory() . '/inc/traits/trait-advanced-css-controls.php';
+require get_template_directory() . '/inc/traits/trait-particles-effect.php';

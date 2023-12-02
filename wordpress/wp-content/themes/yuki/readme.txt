@@ -4,7 +4,7 @@ Author: WP Moose
 Requires at least: WordPress 5.2+
 Tested up to: WordPress 6.4
 Requires PHP: 7.2
-Stable tag: 1.3.12
+Stable tag: 1.3.13
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: news, blog, portfolio, grid-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, block-styles, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, threaded-comments, theme-options, translation-ready, wide-blocks
@@ -75,6 +75,10 @@ GPL v2 - src/lotta-framework/LICENSE
 Credits - src/lotta-framework/README.md
 
 == Changelog ==
+
+= 1.3.13 =
+
+* Add: Particles effect in header row & featured image
 
 = 1.3.12 =
 

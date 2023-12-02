@@ -204,6 +204,95 @@ if ( ! trait_exists( 'Yuki_Article_Controls' ) ) {
 				'image-style' => 'behind',
 			] );
 
+			$behind_controls     = [
+				( new ColorPicker( 'yuki_' . $type . '_featured_image_elements_override' ) )
+					->setLabel( __( 'Header Color Override', 'yuki' ) )
+					->bindSelectiveRefresh( 'yuki-global-selective-css' )
+					->addColor( 'override', __( 'Override', 'yuki' ), '#eeeeee' )
+				,
+				( new Separator() ),
+				( new Background( 'yuki_' . $type . '_featured_image_background_overlay' ) )
+					->setLabel( __( 'Header Overlay', 'yuki' ) )
+					->bindSelectiveRefresh( 'yuki-global-selective-css' )
+					->setDefaultValue( [
+						'type'     => 'gradient',
+						'gradient' => 'linear-gradient(180deg,rgba(50,65,84,0.26) 0%,rgba(50,65,84,0.73) 100%)',
+						'color'    => 'var(--yuki-accent-active)',
+					] )
+				,
+				( new Separator() ),
+				( new Spacing( 'yuki_' . $type . '_featured_image_background_spacing' ) )
+					->setLabel( __( 'Spacing', 'yuki' ) )
+					->bindSelectiveRefresh( 'yuki-global-selective-css' )
+					->enableResponsive()
+					->setDefaultValue( [
+						'top'    => '68px',
+						'right'  => '68px',
+						'bottom' => '68px',
+						'left'   => '68px',
+						'linked' => true,
+					] )
+				,
+			];
+			$non_behind_controls = [
+				( new Radio( 'yuki_' . $type . '_featured_image_width' ) )
+					->setLabel( __( 'Image Width', 'yuki' ) )
+					->buttonsGroupView()
+					->setDefaultValue( 'wide' )
+					->setChoices( [
+						'default' => __( 'Default', 'yuki' ),
+						'wide'    => __( 'Wide', 'yuki' ),
+						'full'    => __( 'Full', 'yuki' ),
+					] )
+				,
+				( new Slider( 'yuki_' . $type . '_featured_image_height' ) )
+					->setLabel( __( 'Image Height', 'yuki' ) )
+					->bindSelectiveRefresh( 'yuki-global-selective-css' )
+					->setUnits( [
+						[ 'unit' => 'px', 'min' => 100, 'max' => 1000 ],
+						[ 'unit' => '%', 'min' => 10, 'max' => 10 ],
+					] )
+					->setDefaultValue( '420px' )
+				,
+				( new BoxShadow( 'yuki_' . $type . '_featured_image_shadow' ) )
+					->setLabel( __( 'Shadow', 'yuki' ) )
+					->bindSelectiveRefresh( 'yuki-global-selective-css' )
+					->setDefaultShadow(
+						'rgba(54,63,70,0.35)',
+						'0px',
+						'18px',
+						'18px',
+						'-15px', false
+					)
+				,
+				( new Separator() ),
+				( new Spacing( 'yuki_' . $type . '_featured_image_radius' ) )
+					->setLabel( __( 'Border Radius', 'yuki' ) )
+					->bindSelectiveRefresh( 'yuki-global-selective-css' )
+					->setDefaultValue( [
+						'top'    => '2px',
+						'right'  => '2px',
+						'bottom' => '2px',
+						'left'   => '2px',
+						'linked' => true
+					] )
+				,
+				( new Separator() ),
+				( new Spacing( 'yuki_' . $type . '_featured_image_spacing' ) )
+					->setLabel( __( 'Spacing', 'yuki' ) )
+					->enableResponsive()
+					->bindSelectiveRefresh( 'yuki-global-selective-css' )
+					->setDisabled( [ 'left', 'right' ] )
+					->setDefaultValue( [
+						'top'    => '12px',
+						'right'  => '0px',
+						'bottom' => '12px',
+						'left'   => '0px',
+						'linked' => true,
+					] )
+				,
+			];
+
 			return [
 				( new ImageUploader( 'yuki_' . $type . '_featured_image_fallback' ) )
 					->setLabel( __( 'Image Fallback', 'yuki' ) )
@@ -235,94 +324,8 @@ if ( ! trait_exists( 'Yuki_Article_Controls' ) ) {
 				( new Separator() ),
 				( new Condition() )
 					->setCondition( [ 'yuki_' . $type . '_featured_image_position' => 'behind' ] )
-					->setControls( [
-						( new ColorPicker( 'yuki_' . $type . '_featured_image_elements_override' ) )
-							->setLabel( __( 'Header Color Override', 'yuki' ) )
-							->bindSelectiveRefresh( 'yuki-global-selective-css' )
-							->addColor( 'override', __( 'Override', 'yuki' ), '#eeeeee' )
-						,
-						( new Separator() ),
-						( new Background( 'yuki_' . $type . '_featured_image_background_overlay' ) )
-							->setLabel( __( 'Header Overlay', 'yuki' ) )
-							->bindSelectiveRefresh( 'yuki-global-selective-css' )
-							->setDefaultValue( [
-								'type'     => 'gradient',
-								'gradient' => 'linear-gradient(180deg,rgba(50,65,84,0.26) 0%,rgba(50,65,84,0.73) 100%)',
-								'color'    => 'var(--yuki-accent-active)',
-							] )
-						,
-						( new Separator() ),
-						( new Spacing( 'yuki_' . $type . '_featured_image_background_spacing' ) )
-							->setLabel( __( 'Spacing', 'yuki' ) )
-							->bindSelectiveRefresh( 'yuki-global-selective-css' )
-							->enableResponsive()
-							->setDefaultValue( [
-								'top'    => '68px',
-								'right'  => '68px',
-								'bottom' => '68px',
-								'left'   => '68px',
-								'linked' => true,
-							] )
-						,
-					] )
-					->setReverseControls( [
-						( new Radio( 'yuki_' . $type . '_featured_image_width' ) )
-							->setLabel( __( 'Image Width', 'yuki' ) )
-							->buttonsGroupView()
-							->setDefaultValue( 'wide' )
-							->setChoices( [
-								'default' => __( 'Default', 'yuki' ),
-								'wide'    => __( 'Wide', 'yuki' ),
-								'full'    => __( 'Full', 'yuki' ),
-							] )
-						,
-						( new Slider( 'yuki_' . $type . '_featured_image_height' ) )
-							->setLabel( __( 'Image Height', 'yuki' ) )
-							->bindSelectiveRefresh( 'yuki-global-selective-css' )
-							->setUnits( [
-								[ 'unit' => 'px', 'min' => 100, 'max' => 1000 ],
-								[ 'unit' => '%', 'min' => 10, 'max' => 10 ],
-							] )
-							->setDefaultValue( '420px' )
-						,
-						( new BoxShadow( 'yuki_' . $type . '_featured_image_shadow' ) )
-							->setLabel( __( 'Shadow', 'yuki' ) )
-							->bindSelectiveRefresh( 'yuki-global-selective-css' )
-							->setDefaultShadow(
-								'rgba(54,63,70,0.35)',
-								'0px',
-								'18px',
-								'18px',
-								'-15px', false
-							)
-						,
-						( new Separator() ),
-						( new Spacing( 'yuki_' . $type . '_featured_image_radius' ) )
-							->setLabel( __( 'Border Radius', 'yuki' ) )
-							->bindSelectiveRefresh( 'yuki-global-selective-css' )
-							->setDefaultValue( [
-								'top'    => '2px',
-								'right'  => '2px',
-								'bottom' => '2px',
-								'left'   => '2px',
-								'linked' => true
-							] )
-						,
-						( new Separator() ),
-						( new Spacing( 'yuki_' . $type . '_featured_image_spacing' ) )
-							->setLabel( __( 'Spacing', 'yuki' ) )
-							->enableResponsive()
-							->bindSelectiveRefresh( 'yuki-global-selective-css' )
-							->setDisabled( [ 'left', 'right' ] )
-							->setDefaultValue( [
-								'top'    => '12px',
-								'right'  => '0px',
-								'bottom' => '12px',
-								'left'   => '0px',
-								'linked' => true,
-							] )
-						,
-					] )
+					->setControls( apply_filters( "yuki_{$type}_behind_featured_image_controls", $behind_controls ) )
+					->setReverseControls( apply_filters( "yuki_{$type}_non_behind_featured_image_controls", $non_behind_controls ) )
 				,
 			];
 		}

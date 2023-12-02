@@ -66,7 +66,7 @@ if ( ! class_exists( 'Yuki_Header_Row' ) ) {
 					);
 				}
 
-				return apply_filters( 'yuki_header_row_css', $css );
+				return apply_filters( 'yuki_header_row_css', $css, $this->id );
 			} );
 		}
 
@@ -99,138 +99,148 @@ if ( ! class_exists( 'Yuki_Header_Row' ) ) {
 		 * @return array
 		 */
 		protected function getRowControls() {
+			$content_controls = [
+				( new Slider( $this->getRowControlKey( 'min_height' ) ) )
+					->setLabel( __( 'Min Height', 'yuki' ) )
+					->asyncCss( ".yuki-header-row-{$this->id} .container", [ 'min-height' => 'value' ] )
+					->setDefaultValue( $this->getRowControlDefault( 'min_height', '80px' ) )
+					->setDefaultUnit( 'px' )
+					->enableResponsive()
+					->setMin( 20 )
+					->setMax( 1000 )
+				,
+				( new Number( $this->getRowControlKey( 'z_index' ) ) )
+					->setLabel( __( 'Z Index', 'yuki' ) )
+					->setMin( - 99999 )
+					->setMax( 99999 )
+					->setDefaultUnit( false )
+					->setDefaultValue( $this->getRowControlDefault( 'z_index', 9 ) )
+				,
+				( new Separator() ),
+				( new MultiSelect( $this->getRowControlKey( 'visibility' ) ) )
+					->setLabel( __( 'Visibility', 'yuki' ) )
+					->buttonsGroupView()
+					->setChoices( [
+						'desktop' => yuki_image( 'desktop' ),
+						'tablet'  => yuki_image( 'tablet' ),
+						'mobile'  => yuki_image( 'mobile' )
+					] )
+					->asyncCss( ".yuki-header-row-{$this->id}", [
+						'display' => [
+							'desktop' => AsyncCss::unescape( AsyncCss::valueMapper( [
+								'yes' => 'block',
+								'no'  => 'none'
+							], "value['desktop']" ) ),
+							'tablet'  => AsyncCss::unescape( AsyncCss::valueMapper( [
+								'yes' => 'block',
+								'no'  => 'none'
+							], "value['tablet']" ) ),
+							'mobile'  => AsyncCss::unescape( AsyncCss::valueMapper( [
+								'yes' => 'block',
+								'no'  => 'none'
+							], "value['mobile']" ) ),
+						]
+					] )
+					->setDefaultValue( [
+						'desktop' => 'yes',
+						'tablet'  => 'yes',
+						'mobile'  => 'yes',
+					] )
+				,
+			];
+
+			$style_controls = [
+				( new Border( $this->getRowControlKey( 'border_top' ) ) )
+					->setLabel( __( 'Top Border', 'yuki' ) )
+					->asyncCss( ".yuki-header-row-{$this->id}", AsyncCss::border( 'border-top' ) )
+					->enableResponsive()
+					->displayBlock()
+					->setDefaultBorder(
+						...$this->getRowControlDefault( 'border_top', [ 1, 'none', 'var(--yuki-base-200)' ] )
+					)
+				,
+				( new Separator() )->setStyle( 'dashed' ),
+				( new Border( $this->getRowControlKey( 'border_bottom' ) ) )
+					->setLabel( __( 'Bottom Border', 'yuki' ) )
+					->asyncCss( ".yuki-header-row-{$this->id}", AsyncCss::border( 'border-bottom' ) )
+					->enableResponsive()
+					->displayBlock()
+					->setDefaultBorder(
+						...$this->getRowControlDefault( 'border_bottom', [
+						1,
+						'none',
+						'var(--yuki-base-200)'
+					] )
+					)
+				,
+				( new Separator() )->setStyle( 'dashed' ),
+				( new BoxShadow( $this->getRowControlKey( 'shadow' ) ) )
+					->setLabel( __( 'Box Shadow', 'yuki' ) )
+					->asyncCss( ".yuki-header-row-{$this->id}", AsyncCss::shadow() )
+					->enableResponsive()
+					->displayBlock()
+					->setDefaultShadow(
+						...$this->getRowControlDefault( 'shadow', [
+							'rgba(44, 62, 80, 0.05)',
+							'0px',
+							'10px',
+							'10px',
+							'0px',
+							false
+						]
+					) )
+				,
+				( new Separator() )->setStyle( 'dashed' ),
+				( new Background( $this->getRowControlKey( 'background' ) ) )
+					->setLabel( __( 'Background', 'yuki' ) )
+					->asyncCss( ".yuki-header-row-{$this->id}", AsyncCss::background() )
+					->enableResponsive()
+					->setDefaultValue( $this->getRowControlDefault( 'background', [
+						'type'  => 'color',
+						'color' => 'var(--yuki-base-color)'
+					] ) )
+				,
+				( new Toggle( $this->getRowControlKey( 'overlay' ) ) )
+					->setLabel( __( 'Enable Overlay', 'yuki' ) )
+					->bindSelectiveRefresh( 'yuki-header-selective-css' )
+					->selectiveRefresh( '.yuki-site-header', 'yuki_header_render' )
+					->closeByDefault()
+				,
+				( new Condition() )
+					->setCondition( [ $this->getRowControlKey( 'overlay' ) => 'yes' ] )
+					->setControls( [
+						( new Slider( $this->getRowControlKey( 'overlay_opacity' ) ) )
+							->setLabel( __( 'Opacity', 'yuki' ) )
+							->asyncCss( ".yuki-header-row-{$this->id} .yuki-overlay", [ 'opacity' => 'value' ] )
+							->setMin( 0 )
+							->setDecimals( 1 )
+							->setMax( 1 )
+							->setDefaultUnit( false )
+							->setDefaultValue( 0.25 )
+						,
+						( new Background( $this->getRowControlKey( 'overlay_background' ) ) )
+							->setLabel( __( 'Overlay Background', 'yuki' ) )
+							->asyncCss( ".yuki-header-row-{$this->id} .yuki-overlay", AsyncCss::background() )
+							->setDefaultValue( [
+								'type'  => 'color',
+								'color' => 'var(--yuki-base-color)'
+							] )
+						,
+					] )
+			];
+
 			return [
 				( new Tabs() )
 					->setActiveTab( 'content' )
-					->addTab( 'content', __( 'Content', 'yuki' ), [
-						( new Slider( $this->getRowControlKey( 'min_height' ) ) )
-							->setLabel( __( 'Min Height', 'yuki' ) )
-							->asyncCss( ".yuki-header-row-{$this->id} .container", [ 'min-height' => 'value' ] )
-							->setDefaultValue( $this->getRowControlDefault( 'min_height', '80px' ) )
-							->setDefaultUnit( 'px' )
-							->enableResponsive()
-							->setMin( 20 )
-							->setMax( 1000 )
-						,
-						( new Number( $this->getRowControlKey( 'z_index' ) ) )
-							->setLabel( __( 'Z Index', 'yuki' ) )
-							->setMin( - 99999 )
-							->setMax( 99999 )
-							->setDefaultUnit( false )
-							->setDefaultValue( $this->getRowControlDefault( 'z_index', 9 ) )
-						,
-						( new Separator() ),
-						( new MultiSelect( $this->getRowControlKey( 'visibility' ) ) )
-							->setLabel( __( 'Visibility', 'yuki' ) )
-							->buttonsGroupView()
-							->setChoices( [
-								'desktop' => yuki_image( 'desktop' ),
-								'tablet'  => yuki_image( 'tablet' ),
-								'mobile'  => yuki_image( 'mobile' )
-							] )
-							->asyncCss( ".yuki-header-row-{$this->id}", [
-								'display' => [
-									'desktop' => AsyncCss::unescape( AsyncCss::valueMapper( [
-										'yes' => 'block',
-										'no'  => 'none'
-									], "value['desktop']" ) ),
-									'tablet'  => AsyncCss::unescape( AsyncCss::valueMapper( [
-										'yes' => 'block',
-										'no'  => 'none'
-									], "value['tablet']" ) ),
-									'mobile'  => AsyncCss::unescape( AsyncCss::valueMapper( [
-										'yes' => 'block',
-										'no'  => 'none'
-									], "value['mobile']" ) ),
-								]
-							] )
-							->setDefaultValue( [
-								'desktop' => 'yes',
-								'tablet'  => 'yes',
-								'mobile'  => 'yes',
-							] )
-						,
-					] )
-					->addTab( 'style', __( 'Style', 'yuki' ), [
-						( new Border( $this->getRowControlKey( 'border_top' ) ) )
-							->setLabel( __( 'Top Border', 'yuki' ) )
-							->asyncCss( ".yuki-header-row-{$this->id}", AsyncCss::border( 'border-top' ) )
-							->enableResponsive()
-							->displayBlock()
-							->setDefaultBorder(
-								...$this->getRowControlDefault( 'border_top', [ 1, 'none', 'var(--yuki-base-200)' ] )
-							)
-						,
-						( new Separator() )->setStyle( 'dashed' ),
-						( new Border( $this->getRowControlKey( 'border_bottom' ) ) )
-							->setLabel( __( 'Bottom Border', 'yuki' ) )
-							->asyncCss( ".yuki-header-row-{$this->id}", AsyncCss::border( 'border-bottom' ) )
-							->enableResponsive()
-							->displayBlock()
-							->setDefaultBorder(
-								...$this->getRowControlDefault( 'border_bottom', [
-								1,
-								'none',
-								'var(--yuki-base-200)'
-							] )
-							)
-						,
-						( new Separator() )->setStyle( 'dashed' ),
-						( new BoxShadow( $this->getRowControlKey( 'shadow' ) ) )
-							->setLabel( __( 'Box Shadow', 'yuki' ) )
-							->asyncCss( ".yuki-header-row-{$this->id}", AsyncCss::shadow() )
-							->enableResponsive()
-							->displayBlock()
-							->setDefaultShadow(
-								...$this->getRowControlDefault( 'shadow', [
-									'rgba(44, 62, 80, 0.05)',
-									'0px',
-									'10px',
-									'10px',
-									'0px',
-									false
-								]
-							) )
-						,
-						( new Separator() )->setStyle( 'dashed' ),
-						( new Background( $this->getRowControlKey( 'background' ) ) )
-							->setLabel( __( 'Background', 'yuki' ) )
-							->asyncCss( ".yuki-header-row-{$this->id}", AsyncCss::background() )
-							->enableResponsive()
-							->setDefaultValue( $this->getRowControlDefault( 'background', [
-								'type'  => 'color',
-								'color' => 'var(--yuki-base-color)'
-							] ) )
-						,
-						( new Toggle( $this->getRowControlKey( 'overlay' ) ) )
-							->setLabel( __( 'Enable Overlay', 'yuki' ) )
-							->bindSelectiveRefresh( 'yuki-header-selective-css' )
-							->selectiveRefresh( '.yuki-site-header', 'yuki_header_render' )
-							->closeByDefault()
-						,
-						( new Condition() )
-							->setCondition( [ $this->getRowControlKey( 'overlay' ) => 'yes' ] )
-							->setControls( [
-								( new Slider( $this->getRowControlKey( 'overlay_opacity' ) ) )
-									->setLabel( __( 'Opacity', 'yuki' ) )
-									->asyncCss( ".yuki-header-row-{$this->id} .yuki-overlay", [ 'opacity' => 'value' ] )
-									->setMin( 0 )
-									->setDecimals( 1 )
-									->setMax( 1 )
-									->setDefaultUnit( false )
-									->setDefaultValue( 0.25 )
-								,
-								( new Background( $this->getRowControlKey( 'overlay_background' ) ) )
-									->setLabel( __( 'Overlay Background', 'yuki' ) )
-									->asyncCss( ".yuki-header-row-{$this->id} .yuki-overlay", AsyncCss::background() )
-									->setDefaultValue( [
-										'type'  => 'color',
-										'color' => 'var(--yuki-base-color)'
-									] )
-								,
-							] )
-					] )
-					->addTab( 'advanced', __( 'Advanced', 'yuki' ), $this->getAdvancedCssControls( $this->getRowControlKey( '' ) ) )
+					->addTab( 'content', __( 'Content', 'yuki' ), apply_filters(
+						'yuki_header_row_content_controls', $content_controls, $this->getRowControlKey( '' ), $this->id
+					) )
+					->addTab( 'style', __( 'Style', 'yuki' ), apply_filters(
+						'yuki_header_row_style_controls', $style_controls, $this->getRowControlKey( '' ), $this->id
+					) )
+					->addTab( 'advanced', __( 'Advanced', 'yuki' ), apply_filters(
+						'yuki_header_row_advanced_controls', $this->getAdvancedCssControls( $this->getRowControlKey( '' ) ), $this->getRowControlKey( '' ), $this->id
+					) )
 				,
 			];
 		}

@@ -135,3 +135,4 @@ require_once ABSPATH . 'wp-settings.php';
 
 define('FS_METHOD', 'direct');
 
+define ( 'WP_ENVIRONMENT_TYPE',	'local'	);

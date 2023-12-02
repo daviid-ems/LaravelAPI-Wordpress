@@ -1,7 +1,7 @@
 (() => {
     "use strict";
     var __webpack_modules__ = {
-        26: (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+        27: (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
             __webpack_require__.r(__webpack_exports__);
             __webpack_require__.d(__webpack_exports__, {
                 default: () => __WEBPACK_DEFAULT_EXPORT__
@@ -67,7 +67,7 @@
     var __webpack_exports__ = {};
     (() => {
         __webpack_require__.r(__webpack_exports__);
-        var _admin_dismiss_notices__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(26);
+        var _admin_dismiss_notices__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(27);
         jQuery((function($) {
             _admin_dismiss_notices__WEBPACK_IMPORTED_MODULE_0__["default"].init($);
         }));

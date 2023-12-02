@@ -730,6 +730,7 @@ if ( !function_exists( 'yuki_show_article_feature_image' ) ) {
             $thumb_attrs['data-shortcut-location'] = $preview_location . ':' . $prefix . '_featured_image';
         }
         
+        do_action( 'yuki_before_render_featured_image', $prefix );
         
         if ( has_post_thumbnail() || CZ::hasImage( $prefix . '_featured_image_fallback' ) ) {
             $width = CZ::get( $prefix . '_featured_image_width' );
@@ -753,7 +754,8 @@ if ( !function_exists( 'yuki_show_article_feature_image' ) ) {
             
             echo  '</div>' ;
         }
-    
+        
+        do_action( 'yuki_after_render_featured_image', $prefix );
     }
 
 }
@@ -773,7 +775,7 @@ if ( !function_exists( 'yuki_show_article_header' ) ) {
         $featured_image_pos = CZ::get( "{$prefix}_featured_image_position" );
         $header_available = $header && !empty($header_elements) && yuki_get_current_post_meta( 'disable-article-header' ) !== 'yes' && CZ::checked( "{$prefix}_header" );
         if ( is_front_page() && !is_home() ) {
-            $header_available = CZ::checked( 'kenta_show_frontpage_header' );
+            $header_available = CZ::checked( 'yuki_show_frontpage_header' );
         }
         $header_attrs = [
             'class' => 'yuki-article-header yuki-max-w-content mx-auto relative z-[1]',
@@ -796,7 +798,6 @@ if ( !function_exists( 'yuki_show_article_header' ) ) {
                 $url = ( has_post_thumbnail() ? get_the_post_thumbnail_url() : CZ::imgAttrs( $prefix . '_featured_image_fallback' )['src'] ?? '' );
                 $background_attrs = [
                     'class' => 'yuki-article-header-background alignfull mb-gutter',
-                    'style' => 'background-image: url("' . esc_url( $url ) . '")',
                 ];
                 
                 if ( is_customize_preview() ) {
@@ -805,6 +806,8 @@ if ( !function_exists( 'yuki_show_article_header' ) ) {
                 }
                 
                 echo  '<div ' . Utils::render_attribute_string( $background_attrs ) . '>' ;
+                yuki_show_article_feature_image( $preview_location, $prefix );
+                echo  '<div class="container mx-auto px-gutter relative">' ;
             }
         
         }
@@ -839,7 +842,7 @@ if ( !function_exists( 'yuki_show_article_header' ) ) {
         
         if ( $has_featured_image ) {
             if ( $featured_image_pos === 'behind' && $header_available ) {
-                echo  '</div>' ;
+                echo  '</div></div>' ;
             }
             if ( $featured_image_pos === 'below' ) {
                 yuki_show_article_feature_image( $preview_location, $prefix );

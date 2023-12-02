@@ -1,5 +1,5 @@
 (() => {
-    var __webpack_modules__ = Array(28).concat([ module => {
+    var __webpack_modules__ = Array(29).concat([ module => {
         "use strict";
         module.exports = window["wp"]["plugins"];
     }, (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -8,18 +8,18 @@
         __webpack_require__.d(__webpack_exports__, {
             default: () => __WEBPACK_DEFAULT_EXPORT__
         });
-        var html_react_parser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30);
-        var _wordpress_compose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(49);
+        var html_react_parser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(31);
+        var _wordpress_compose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(50);
         var _wordpress_compose__WEBPACK_IMPORTED_MODULE_1___default = __webpack_require__.n(_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__);
-        var _wordpress_edit_post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(50);
+        var _wordpress_edit_post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(51);
         var _wordpress_edit_post__WEBPACK_IMPORTED_MODULE_2___default = __webpack_require__.n(_wordpress_edit_post__WEBPACK_IMPORTED_MODULE_2__);
-        var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(51);
+        var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(52);
         var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = __webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-        var _wordpress_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(52);
+        var _wordpress_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(53);
         var _wordpress_data__WEBPACK_IMPORTED_MODULE_4___default = __webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_4__);
-        var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(53);
+        var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(54);
         var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_5___default = __webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__);
-        var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(54);
+        var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(55);
         function ownKeys(object, enumerableOnly) {
             var keys = Object.keys(object);
             if (Object.getOwnPropertySymbols) {
@@ -234,7 +234,7 @@
             domToReact: () => _lib_index_js__WEBPACK_IMPORTED_MODULE_0__.domToReact,
             htmlToDOM: () => _lib_index_js__WEBPACK_IMPORTED_MODULE_0__.htmlToDOM
         });
-        var _lib_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(31);
+        var _lib_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(32);
         const __WEBPACK_DEFAULT_EXPORT__ = _lib_index_js__WEBPACK_IMPORTED_MODULE_0__["default"] || _lib_index_js__WEBPACK_IMPORTED_MODULE_0__;
     }, function(__unused_webpack_module, exports, __webpack_require__) {
         "use strict";
@@ -247,13 +247,13 @@
             value: true
         });
         exports.htmlToDOM = exports.domToReact = exports.attributesToProps = exports.Text = exports.ProcessingInstruction = exports.Element = exports.Comment = void 0;
-        var html_dom_parser_1 = __importDefault(__webpack_require__(32));
+        var html_dom_parser_1 = __importDefault(__webpack_require__(33));
         exports.htmlToDOM = html_dom_parser_1.default;
-        var attributes_to_props_1 = __importDefault(__webpack_require__(39));
+        var attributes_to_props_1 = __importDefault(__webpack_require__(40));
         exports.attributesToProps = attributes_to_props_1.default;
-        var dom_to_react_1 = __importDefault(__webpack_require__(48));
+        var dom_to_react_1 = __importDefault(__webpack_require__(49));
         exports.domToReact = dom_to_react_1.default;
-        var domhandler_1 = __webpack_require__(35);
+        var domhandler_1 = __webpack_require__(36);
         Object.defineProperty(exports, "Comment", {
             enumerable: true,
             get: function() {
@@ -301,8 +301,8 @@
         Object.defineProperty(exports, "__esModule", {
             value: true
         });
-        var domparser_1 = __importDefault(__webpack_require__(33));
-        var utilities_1 = __webpack_require__(34);
+        var domparser_1 = __importDefault(__webpack_require__(34));
+        var utilities_1 = __webpack_require__(35);
         var DIRECTIVE_REGEX = /<(![a-zA-Z\s]+)>/;
         function HTMLDOMParser(html) {
             if (typeof html !== "string") {
@@ -413,8 +413,8 @@
             value: true
         });
         exports.formatDOM = exports.formatAttributes = void 0;
-        var domhandler_1 = __webpack_require__(35);
-        var constants_1 = __webpack_require__(38);
+        var domhandler_1 = __webpack_require__(36);
+        var constants_1 = __webpack_require__(39);
         function getCaseSensitiveTagName(tagName) {
             return constants_1.CASE_SENSITIVE_TAG_NAMES_MAP[tagName];
         }
@@ -513,9 +513,9 @@
             value: true
         });
         exports.DomHandler = void 0;
-        var domelementtype_1 = __webpack_require__(36);
-        var node_js_1 = __webpack_require__(37);
-        __exportStar(__webpack_require__(37), exports);
+        var domelementtype_1 = __webpack_require__(37);
+        var node_js_1 = __webpack_require__(38);
+        __exportStar(__webpack_require__(38), exports);
         var defaultOpts = {
             withStartIndices: false,
             withEndIndices: false,
@@ -709,7 +709,7 @@
             value: true
         });
         exports.cloneNode = exports.hasChildren = exports.isDocument = exports.isDirective = exports.isComment = exports.isText = exports.isCDATA = exports.isTag = exports.Element = exports.Document = exports.CDATA = exports.NodeWithChildren = exports.ProcessingInstruction = exports.Comment = exports.Text = exports.DataNode = exports.Node = void 0;
-        var domelementtype_1 = __webpack_require__(36);
+        var domelementtype_1 = __webpack_require__(37);
         var Node = function() {
             function Node() {
                 this.parent = null;
@@ -1064,8 +1064,8 @@
         Object.defineProperty(exports, "__esModule", {
             value: true
         });
-        var react_property_1 = __webpack_require__(40);
-        var utilities_1 = __webpack_require__(42);
+        var react_property_1 = __webpack_require__(41);
+        var utilities_1 = __webpack_require__(43);
         var UNCONTROLLED_COMPONENT_ATTRIBUTES = [ "checked", "value" ];
         var UNCONTROLLED_COMPONENT_NAMES = [ "input", "select", "textarea" ];
         var valueOnlyInputs = {
@@ -1189,7 +1189,7 @@
         [ "src", "href", "action", "formAction" ].forEach((attributeName => {
             properties[attributeName] = new PropertyInfoRecord(attributeName, STRING, false, attributeName.toLowerCase(), null, true, true);
         }));
-        const {CAMELCASE, SAME, possibleStandardNames: possibleStandardNamesOptimized} = __webpack_require__(41);
+        const {CAMELCASE, SAME, possibleStandardNames: possibleStandardNamesOptimized} = __webpack_require__(42);
         const ATTRIBUTE_NAME_START_CHAR = ":A-Z_a-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02FF\\u0370-\\u037D\\u037F-\\u1FFF\\u200C-\\u200D\\u2070-\\u218F\\u2C00-\\u2FEF\\u3001-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFFD";
         const ATTRIBUTE_NAME_CHAR = ATTRIBUTE_NAME_START_CHAR + "\\-.0-9\\u00B7\\u0300-\\u036F\\u203F-\\u2040";
         const isCustomAttribute = RegExp.prototype.test.bind(new RegExp("^(data|aria)-[" + ATTRIBUTE_NAME_CHAR + "]*$"));
@@ -1715,8 +1715,8 @@
             value: true
         });
         exports.returnFirstArg = exports.canTextBeChildOfNode = exports.ELEMENTS_WITH_NO_TEXT_CHILDREN = exports.PRESERVE_CUSTOM_ATTRIBUTES = exports.setStyleProp = exports.isCustomComponent = void 0;
-        var react_1 = __webpack_require__(43);
-        var style_to_js_1 = __importDefault(__webpack_require__(44));
+        var react_1 = __webpack_require__(44);
+        var style_to_js_1 = __importDefault(__webpack_require__(45));
         var RESERVED_SVG_MATHML_ELEMENTS = new Set([ "annotation-xml", "color-profile", "font-face", "font-face-src", "font-face-uri", "font-face-format", "font-face-name", "missing-glyph" ]);
         function isCustomComponent(tagName, props) {
             if (!tagName.includes("-")) {
@@ -1769,8 +1769,8 @@
         Object.defineProperty(exports, "__esModule", {
             value: true
         });
-        var style_to_object_1 = __importDefault(__webpack_require__(45));
-        var utilities_1 = __webpack_require__(47);
+        var style_to_object_1 = __importDefault(__webpack_require__(46));
+        var utilities_1 = __webpack_require__(48);
         function StyleToJS(style, options) {
             var output = {};
             if (!style || typeof style !== "string") {
@@ -1794,7 +1794,7 @@
         Object.defineProperty(exports, "__esModule", {
             value: true
         });
-        var inline_style_parser_1 = __importDefault(__webpack_require__(46));
+        var inline_style_parser_1 = __importDefault(__webpack_require__(47));
         function StyleToObject(style, iterator) {
             var styleObject = null;
             if (!style || typeof style !== "string") {
@@ -2001,9 +2001,9 @@
         Object.defineProperty(exports, "__esModule", {
             value: true
         });
-        var react_1 = __webpack_require__(43);
-        var attributes_to_props_1 = __importDefault(__webpack_require__(39));
-        var utilities_1 = __webpack_require__(42);
+        var react_1 = __webpack_require__(44);
+        var attributes_to_props_1 = __importDefault(__webpack_require__(40));
+        var utilities_1 = __webpack_require__(43);
         var React = {
             cloneElement: react_1.cloneElement,
             createElement: react_1.createElement,
@@ -2099,14 +2099,14 @@
     }, (module, __unused_webpack_exports, __webpack_require__) => {
         "use strict";
         if (false) {} else {
-            module.exports = __webpack_require__(55);
+            module.exports = __webpack_require__(56);
         }
     }, (__unused_webpack_module, exports, __webpack_require__) => {
         "use strict";
         if (true) {
             (function() {
                 "use strict";
-                var React = __webpack_require__(43);
+                var React = __webpack_require__(44);
                 var REACT_ELEMENT_TYPE = Symbol.for("react.element");
                 var REACT_PORTAL_TYPE = Symbol.for("react.portal");
                 var REACT_FRAGMENT_TYPE = Symbol.for("react.fragment");
@@ -3030,9 +3030,9 @@
     (() => {
         "use strict";
         __webpack_require__.r(__webpack_exports__);
-        var _wordpress_plugins__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(28);
+        var _wordpress_plugins__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(29);
         var _wordpress_plugins__WEBPACK_IMPORTED_MODULE_0___default = __webpack_require__.n(_wordpress_plugins__WEBPACK_IMPORTED_MODULE_0__);
-        var _admin_settings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(29);
+        var _admin_settings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(30);
         (function(wp) {
             (0, _wordpress_plugins__WEBPACK_IMPORTED_MODULE_0__.registerPlugin)("yuki-theme-settings", {
                 render: _admin_settings__WEBPACK_IMPORTED_MODULE_1__["default"]
