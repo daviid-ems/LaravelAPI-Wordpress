@@ -8,6 +8,8 @@ services:
     container_name: nginx
     ports:
       - "80:80"
+      - "433:433"
+      - "8080:80"
     volumes:
       - ./nginx:/etc/nginx/conf.d
       - ./nginx/api.conf:/etc/nginx/conf.d/api.conf
@@ -18,7 +20,7 @@ services:
     depends_on:
       - wordpress
       - api
-  
+
   db:
     image: mysql:5.7
     container_name: mysql
@@ -31,14 +33,14 @@ services:
       MYSQL_PASSWORD: 123456
 
   wordpress:
+    build:
+      context: .
+      dockerfile: ./config/api-config/wordpress.dockerfile
     depends_on:
       - db
-    image: wordpress:latest
     container_name: wordpress
     volumes:
       - ./wordpress:/var/www/html
-    ports:
-      - "8080:80"
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: admin
@@ -48,7 +50,7 @@ services:
   api:
     build:
       context: .
-      dockerfile: ./config/api-config/Dockerfile
+      dockerfile: ./config/api-config/api.dockerfile
     volumes:
       - ./api:/var/www/api
     container_name: api
